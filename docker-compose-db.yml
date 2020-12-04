@@ -1,0 +1,30 @@
+version: "3.5"
+services: 
+  example-golang-db-service:
+    container_name: example-golang-db-only
+    image: postgres:alpine
+    env_file: ./docker/local.env
+    volumes:
+      - ./docker/database/postgres/data:/var/lib/postgresql/data
+      - ./docker/database/postgres/scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5435:5432"
+    tty: true
+    restart: always
+    healthcheck:
+      #IMPORTANT! change this if you have changed a local.env
+      test: ["CMD-SHELL", "pg_isready -U example-golang-usr -d example-golang-db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  example-golang-adminer-service:
+    container_name: example-golang-adminer-only
+    image: adminer
+    restart: always
+    ports:
+      - 8086:8080
+    env_file: ./docker/local.env
+    links:
+      - example-golang-db-service
+    depends_on:
+      - example-golang-db-service
