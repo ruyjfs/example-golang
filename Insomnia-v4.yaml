@@ -1,0 +1,481 @@
+_type: export
+__export_format: 4
+__export_date: 2020-12-06T23:21:23.533Z
+__export_source: insomnia.desktop.app:v2020.5.0
+resources:
+  - _id: req_fbc6cc8d9dba4505a2e0a77f01dbe43d
+    parentId: fld_60817a077581427bad77f3ddd6b9d9a2
+    modified: 1607291186277
+    created: 1607249211617
+    url: "{{ _.URL }}{{ _.VERSION }}/users"
+    name: index
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: "{}"
+    parameters:
+      - name: Name
+        value: Ruy
+        description: ""
+        id: pair_72779808764c42b3974806ffd9e12d7b
+        disabled: true
+      - name: ""
+        value: ""
+        description: ""
+        id: pair_3fdc4f353da54ee7a0d5b8d8bde9fe95
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9e49b5f7956f4b22bf958fba28e7e333
+    authentication: {}
+    metaSortKey: -1607248852914.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_60817a077581427bad77f3ddd6b9d9a2
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1607252005746
+    created: 1607249217948
+    name: users
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1607248519855
+    _type: request_group
+  - _id: wrk_4c196499be254bac9e2bd35111ec145d
+    parentId: null
+    modified: 1607291705278
+    created: 1606952509108
+    name: Go - Example
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: req_85daec00ee534225b09aeb0d3993c9e8
+    parentId: fld_60817a077581427bad77f3ddd6b9d9a2
+    modified: 1607291181662
+    created: 1607290192737
+    url: "{{ _.URL }}{{ _.VERSION }}/users"
+    name: index (filter)
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Ruy"
+        }
+    parameters:
+      - name: Name
+        value: Ruy
+        description: ""
+        id: pair_72779808764c42b3974806ffd9e12d7b
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9e49b5f7956f4b22bf958fba28e7e333
+    authentication: {}
+    metaSortKey: -1607248761656.4375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5e0d4f0859ae4c609c520d33878db047
+    parentId: fld_60817a077581427bad77f3ddd6b9d9a2
+    modified: 1607291870241
+    created: 1607249436549
+    url: "{{ URL }}{{ VERSION }}/users/9"
+    name: show
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1607248750249.1484
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a1ae4ccb4e694a5a9fe7b45ef42a570c
+    parentId: fld_60817a077581427bad77f3ddd6b9d9a2
+    modified: 1607291863456
+    created: 1607291649179
+    url: "{{ _.URL }}{{ _.VERSION }}/users"
+    name: store
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Ruy111",
+        	"email": "ruyjfs2@gmail.com",
+        	"firstName": "Ruy",
+        	"lastName": "Ferreira",
+        	"date": "01-01-2000",
+        	"gender": null,
+        	"password": "123456"
+        }
+    parameters:
+      - name: Name
+        value: Ruy
+        description: ""
+        id: pair_72779808764c42b3974806ffd9e12d7b
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9e49b5f7956f4b22bf958fba28e7e333
+    authentication: {}
+    metaSortKey: -1607248738841.8594
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cd7edc96dc8045978fd2136dbee29a8c
+    parentId: fld_60817a077581427bad77f3ddd6b9d9a2
+    modified: 1607291960081
+    created: 1607291591672
+    url: "{{ _.URL }}{{ _.VERSION }}/users"
+    name: update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 8,
+        	"name": "Ruy8",
+        	"email": "ruyjfs2@gmail.com",
+        	"firstName": "Ruy",
+        	"lastName": "Ferreira",
+        	"date": "01-01-2000",
+        	"gender": null,
+        	"password": "123456"
+        }
+    parameters:
+      - name: Name
+        value: Ruy
+        description: ""
+        id: pair_72779808764c42b3974806ffd9e12d7b
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9e49b5f7956f4b22bf958fba28e7e333
+    authentication: {}
+    metaSortKey: -1607248716027.2812
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6f1bfedf28c6453db9d0dc4344c868ec
+    parentId: fld_60817a077581427bad77f3ddd6b9d9a2
+    modified: 1607291292374
+    created: 1607291261171
+    url: "{{ _.URL }}{{ _.VERSION }}/users/5"
+    name: destroy
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - name: Name
+        value: Ruy
+        description: ""
+        id: pair_72779808764c42b3974806ffd9e12d7b
+        disabled: true
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9e49b5f7956f4b22bf958fba28e7e333
+    authentication: {}
+    metaSortKey: -1607248670348.125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_da3a63016882457a84bdfd7cdb9e5899
+    parentId: fld_77a230c9eabe4dbfb7ecf06a7099a81a
+    modified: 1607296217161
+    created: 1607221926600
+    url: "{{ _.URL }}/graphql"
+    name: users
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  users {\n    id\n    name\n    email\n  }\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_211a0aaeee55438e804a77502c4aecf0
+    authentication: {}
+    metaSortKey: -1607100541590.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_77a230c9eabe4dbfb7ecf06a7099a81a
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1607248455958
+    created: 1607248455958
+    name: GraphQL
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1607248455958
+    _type: request_group
+  - _id: req_bb6f8b603a20425590925a22df5f8493
+    parentId: fld_77a230c9eabe4dbfb7ecf06a7099a81a
+    modified: 1607296200284
+    created: 1607028143082
+    url: "{{ _.URL }}/graphql"
+    name: usersBy
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  users (input: {name: \"Ruy\"})
+        {\n    id\n    name\n    email\n  }\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_211a0aaeee55438e804a77502c4aecf0
+    authentication: {}
+    metaSortKey: -1607100541540.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1f8b9e51f7c5444eb9f14908d584e60b
+    parentId: fld_77a230c9eabe4dbfb7ecf06a7099a81a
+    modified: 1607294333999
+    created: 1607027243373
+    url: "{{ _.URL }}/graphql"
+    name: createUser
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  createUser(input: {\n    name:
+        \"Ruy2\",\n    email: \"ruyjfs2@gmail.com\"\n    password:
+        \"123456\"\n  }) {\n    id\n    name\n    email\n  }\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_211a0aaeee55438e804a77502c4aecf0
+    authentication: {}
+    metaSortKey: -1607100541503
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_84e018efe3544d01995590a8cc57e13e
+    parentId: fld_77a230c9eabe4dbfb7ecf06a7099a81a
+    modified: 1607296195356
+    created: 1607294608961
+    url: "{{ _.URL }}/graphql"
+    name: updateUser
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  updateUser(input: {\n    id: 1, \n    name:
+        \"Ruy\",\n    email: \"ruyjfs2@gmail.com\"\n    password:
+        \"123456\"\n  }) {\n    id\n    name\n    email\n  }\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_211a0aaeee55438e804a77502c4aecf0
+    authentication: {}
+    metaSortKey: -1607100541496.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d0eeda4c08b744b59045b651e17c32fa
+    parentId: fld_77a230c9eabe4dbfb7ecf06a7099a81a
+    modified: 1607248574297
+    created: 1607223775677
+    url: "{{ _.URL }}/graphql"
+    name: deleteUser
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n  deleteUser(input: {\n    id: 6\n  })
+        {\n    id\n    name\n    email\n  }\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_211a0aaeee55438e804a77502c4aecf0
+    authentication: {}
+    metaSortKey: -1607100541490.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fee58890422944b7aa222ed9b881cdea
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1607296205550
+    created: 1606955089407
+    url: "{{ _.URL }}/graphql"
+    name: graphql
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  users (input: {name: \"ruy\"})
+        {\n    id\n    name\n    email\n  }\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_211a0aaeee55438e804a77502c4aecf0
+    authentication: {}
+    metaSortKey: -1606694170292
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a5922e0a51dd401d9c1b19e6e6cfc5db
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1607252012233
+    created: 1606952627123
+    url: "{{ _.URL }}/"
+    name: index
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1606694170242
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_d9e0b92eca470be029e4fcf01cd95754612d87ad
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1607251708825
+    created: 1606952509221
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1606952509221
+    _type: environment
+  - _id: jar_d9e0b92eca470be029e4fcf01cd95754612d87ad
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1606952509227
+    created: 1606952509227
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_a601748fc1e747d893f03e3195f00ce1
+    parentId: wrk_4c196499be254bac9e2bd35111ec145d
+    modified: 1606952509114
+    created: 1606952509114
+    fileName: Example Golang
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_db3f5eac984c4b7e84da74c7a6aad928
+    parentId: env_d9e0b92eca470be029e4fcf01cd95754612d87ad
+    modified: 1607296000033
+    created: 1606952537070
+    name: docker
+    data:
+      URL: localhost:8085
+      VERSION: /api/v1
+      GRAPHQL: /graphql
+    dataPropertyOrder:
+      "&":
+        - URL
+        - VERSION
+        - GRAPHQL
+    color: null
+    isPrivate: false
+    metaSortKey: 1
+    _type: environment
+  - _id: env_f60e009463a2480ca433621165fd6495
+    parentId: env_d9e0b92eca470be029e4fcf01cd95754612d87ad
+    modified: 1607251471436
+    created: 1606952541868
+    name: local
+    data:
+      URL: localhost:8080
+      VERSION: /api/v1
+      GRAPHQL: /graphql
+    dataPropertyOrder:
+      "&":
+        - URL
+        - VERSION
+        - GRAPHQL
+    color: null
+    isPrivate: false
+    metaSortKey: 0
+    _type: environment
