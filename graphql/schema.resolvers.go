@@ -5,49 +5,26 @@ package graphql
 
 import (
 	"context"
-	"fmt"
 
-	"github.com/mholt/binding"
 	"github.com/ruyjfs/example-golang/graphql/generated"
 	"github.com/ruyjfs/example-golang/graphql/model"
-	"github.com/ruyjfs/example-golang/models"
-	"github.com/ruyjfs/example-golang/services"
+	"github.com/ruyjfs/example-golang/graphql/resolvers"
 )
 
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
-	var user *models.User
-
-	// user := models.User{
-	// 	Name:     input.Name,
-	// 	Email:    input.Email,
-	// 	Password: input.Password,
-	// }
-
-	// new(services.Users).Save(&user)
-
-	var userGraphQL = &model.User{
-		ID:       user.ID,
-		Name:     user.Name,
-		Email:    user.Email,
-		Password: user.Password,
-	}
-	errs := binding.Bind(input, user)
-
-	userGraphQL := model.User(input)
-
-	return userGraphQL, nil
+	return new(resolvers.User).Create(input)
 }
 
-func (r *mutationResolver) UpdateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *mutationResolver) UpdateUser(ctx context.Context, input model.UpdateUser) (*model.User, error) {
+	return new(resolvers.User).Update(input)
 }
 
-func (r *mutationResolver) DeleteUser(ctx context.Context, id string) (*model.User, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *mutationResolver) DeleteUser(ctx context.Context, input *model.DeleteInput) (*model.User, error) {
+	return new(resolvers.User).Delete(input.ID)
 }
 
 func (r *queryResolver) Users(ctx context.Context, input *model.SearchUser) ([]*model.User, error) {
-	return new(services.Users).GetAll(input)
+	return new(resolvers.User).All(input)
 }
 
 // Mutation returns generated.MutationResolver implementation.

@@ -7,5 +7,6 @@ import (
 
 func main() {
 	database.Migrate()
+	// database.Seeder()
 	routes.Run()
 }

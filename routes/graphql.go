@@ -1,18 +1,32 @@
 package routes
 
 import (
-	"net/http"
-
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/99designs/gqlgen/handler"
+	"github.com/gin-gonic/gin"
 	"github.com/ruyjfs/example-golang/graphql"
 	"github.com/ruyjfs/example-golang/graphql/generated"
 )
 
-func GraphQL() {
+func Graphql(router *gin.Engine) *gin.Engine {
 
-	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graphql.Resolver{}}))
+	router.POST("/graphql", graphqlHandler())
+	router.GET("/graphiql", playgroundHandler())
 
-	http.Handle("/graphiql", playground.Handler("GraphQL playground", "/graphql"))
-	http.Handle("/graphql", srv)
+	return router
+}
+
+func graphqlHandler() gin.HandlerFunc {
+	h := handler.GraphQL(generated.NewExecutableSchema(generated.Config{Resolvers: &graphql.Resolver{}}))
+
+	return func(c *gin.Context) {
+		h.ServeHTTP(c.Writer, c.Request)
+	}
+}
+
+func playgroundHandler() gin.HandlerFunc {
+	h := handler.Playground("GraphQL", "/graphql")
+
+	return func(c *gin.Context) {
+		h.ServeHTTP(c.Writer, c.Request)
+	}
 }

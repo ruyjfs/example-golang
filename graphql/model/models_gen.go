@@ -2,6 +2,10 @@
 
 package model
 
+type DeleteInput struct {
+	ID int `json:"id"`
+}
+
 type NewUser struct {
 	Name      string  `json:"name"`
 	Email     string  `json:"email"`
@@ -20,6 +24,17 @@ type SearchUser struct {
 	Date      *string `json:"date"`
 	Gender    *int    `json:"gender"`
 	Password  *string `json:"password"`
+}
+
+type UpdateUser struct {
+	ID        int     `json:"id"`
+	Name      string  `json:"name"`
+	Email     string  `json:"email"`
+	FirstName *string `json:"firstName"`
+	LastName  *string `json:"lastName"`
+	Date      *string `json:"date"`
+	Gender    *int    `json:"gender"`
+	Password  string  `json:"password"`
 }
 
 type User struct {

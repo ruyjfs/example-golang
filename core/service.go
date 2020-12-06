@@ -1,6 +1,15 @@
 package core
 
+import (
+	"github.com/ruyjfs/example-golang/config"
+	"gorm.io/gorm"
+)
+
 type Service struct {
+}
+
+func (m *Service) Db() *gorm.DB {
+	return config.Db()
 }
 
 func (s *Service) Find(m interface{}) {
