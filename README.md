@@ -1,6 +1,6 @@
 # Example Golang
 
-Golang, GraphQL, Resful, Auth JWT example and much more.
+Example made with Golang, Gin Framework, GraphQL, Resful, Authenticate with JWT and much more.
 
 A example of bank transaction, made with GOlang, Gin Framework, Restful and GraphQL.
 
